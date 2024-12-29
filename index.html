@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protfolio</title>
+    <link rel="stylesheet" href="./assects/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
+</head>
+<body>
+    <!-- nav bar -->
+    <nav class="nav">
+        <a href="#main">Profile</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <!-- logo -->
+    <div id="logoContainer">
+        <img src="./img/my-logo.png" id="my-logo">
+    </div>
+    <!-- uppercontext -->
+    <div class="uppercontext">
+        <span id="hello">"Hello"</span>
+        <br>
+        <a id="my">My name is </a>
+    <div id="name"><span id="upper-cumma1">"</span> <span class="molaybera">Malay Bera</span> <span id="upper-cumma2">"</span></div>
+    </div>
+    <!-- main -->
+    <div id="main">
+        <img src="./img/molay.jpeg" class="ProfileImg">
+        <!-- id = "main-text' -->
+        <h1>I'am <span id="main-text"></span></h1>
+        <!-- hidden pra -->
+        <p id="hidden-paragraph"><span id="mid-p">Hello</span>,
+            <span class="w">W</span><span class="e">e</span><span class="l">l</span><span class="c">c</span><span class="o">o</span><span class="m">m</span><span class="e">e</span> 
+            <span class="t">t</span><span class="o">o</span> <span class="m">m</span><span class="y">y</span> 
+            <span class="m">M</span><span class="y">y</span> 
+            <span class="p">P</span><span class="o">o</span><span class="r">r</span><span class="t">t</span><span class="f">f</span><span class="o">o</span><span class="l">l</span><span class="i">i</span><span class="o">o</span>.
+        </p>
+    </div>
+    <!-- about -->
+    <div id="about">
+        <div class="about-pra">
+            <h4>About Me</h4>
+            <p>Hello! I'm Malay</p>
+
+            <h4>My Mission</h4>
+            <p>To continually learn and grow in the field of technologies while delivering high-quality work that meets the needs of my clients and users.</p>
+        
+            <h4>My Skills</h4>
+            <ul style="display: flex; flex-direction: column;">
+                <a>1. HTML, CSS, Java-Script, Nodejs, Python.</a>
+                <a>3. Excel, Word, Power-point.</a>
+                <a>4. Frontend Development.</a>
+                <a>5. Video editing, photo editing.</a>
+
+                <h4>Projects</h4>
+                <p>Here are a few micro projects I've worked on:</p>
+                <ul style="margin-left: 20px;">
+                    <li><a href="https://molaybera.github.io/Weather-report/" target="_blank"><strong>--Weather report--</strong></a> "Created using api"</li>
+                    <li><a href="https://molaybera.github.io/Qr-Code-Generator/" target="_blank"><strong>--Qr-Code-Generator--</strong></a> "Created using api"</li>
+                    <li><a href="https://molaybera.github.io/Drum_kit/" target="_blank"><strong>--Drum_kit--</strong></a></li>
+                    <li><a href="https://molaybera.github.io/To-Do-List/" target="_blank"><strong>--To-Do-List--</strong></a></li>
+                </ul>
+            </ul>
+        </div>
+        <!-- card slider -->
+         <div class="swiperCard">
+        <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoplay="true" autoplay-delay="1000" free-mode="true" mousewheel="true" pagination="true">
+            <swiper-slide><img src="./img/icon_img/html.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/css.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/java_script.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/reacts.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/nodejs.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/python.png" alt="img"></swiper-slide>
+        </swiper-container> 
+          <div class="swiper-pagination"></div>
+        </div>
+<!-- download button -->
+        <a href="./assects/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download CV</a>
+    </div>
+<!-- Contact -->
+    <div id="contact">
+        <!-- contact box -->
+        <div class="contact-box">
+            <div class="left-title">
+                <h2>Get in Touch</h2>
+                <hr>
+            </div>
+            <a href="mailto:molaybera299@gmail.com" class="MailButton" target="_blank">Click Me</a>
+        </div>
+        <!-- mail img -->
+        <div class="contact-img">
+            <img src="./img/icon_img/Mail.png" alt="img">
+        </div>
+        <!-- socila Media  -->
+        <div class="Social-media">
+            <div class="icon-wrapper">
+              <img src="./img/socialmedia_img/linkedin.png" alt="linkedin-Img" class="social-media-icon">
+              <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="icon-link">linkedin</a>
+            </div>
+            <div class="icon-wrapper">
+              <img src="./img/socialmedia_img/facebook.png" alt="facebook-Img" class="social-media-icon">
+              <a href="https://www.facebook.com/molay.bera.161" target="_blank" class="icon-link">facebook</a>
+            </div>
+            <div class="icon-wrapper">
+              <img src="./img/socialmedia_img/instagram.png" alt="instagram-Img" class="social-media-icon">
+              <a href="https://www.instagram.com/molay_bera1" target="_blank" class="icon-link" id="instagram">instagram</a>
+            </div>
+            <div class="icon-wrapper">
+              <img src="./img/socialmedia_img/github.png" alt="github-img" class="social-media-icon" style="border: 2px solid black;">
+              <a href="https://github.com/Molaybera" target="_blank" class="icon-link">github</a>
+            </div>
+          </div> 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assects/script.js" defer></script>
+</body>
+</html>
