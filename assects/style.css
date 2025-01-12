@@ -622,6 +622,7 @@ swiper-slide {
 /* large - mobile view */
 @media only screen and (max-width: 425px){
   #about{
+    height: fit-content;
     grid-template-columns:1fr 1fr;
     grid-template-rows: 2fr 1fr;
     row-gap: 50px;
