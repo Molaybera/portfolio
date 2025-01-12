@@ -269,6 +269,7 @@ body{
   font-weight: 600;
   font-size: 150px;
   margin-top: 50px;
+  color: gray;
   cursor: pointer;
 }
 #main h1 span{
