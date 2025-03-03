@@ -493,7 +493,7 @@ body{
 }
 /* About page */
 #about{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   overflow: hidden;
   display: grid;
@@ -521,7 +521,7 @@ body{
 }
 .about-pra:hover{
   color: var(--black);
-  background-color: var(--blue);
+  background-color: #48bfffbb;
   box-shadow: none;
   cursor: crosshair;
 }
