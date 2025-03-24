@@ -645,7 +645,7 @@ cursor: pointer;
 .about-pra{
   width: 500px;
   padding: 20px;
-  margin-top: 1%;
+  margin-top:  5%;
   font-size: 20px;
 }
 .skills{
@@ -681,7 +681,7 @@ swiper-slide img{
 .about-pra{
   width: 400px;
   padding: 20px;
-  margin-top: 1%;
+  margin-top: 10%;
   font-size: 20px;
 }
 .skills{
@@ -706,6 +706,7 @@ swiper-slide img{
 .about-pra{
   height: auto;
   width: 300px;
+  margin-right: 10%;
   margin-right: 30%;
   font-size: 15px;
 }
