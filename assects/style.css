@@ -492,7 +492,7 @@ cursor: pointer;
 }
 /* About page */
 #about{
-min-height: 100vh;
+min-height: 150vh;
 width: 100%;
 overflow: hidden;
 }
