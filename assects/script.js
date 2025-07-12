@@ -120,3 +120,8 @@ document.addEventListener("DOMContentLoaded", function() {
     type();
 
 });
+// copying the email funciton
+function copyEmail() {
+  navigator.clipboard.writeText("molaybera299@gmail.com");
+  alert("Email copied to clipboard!");
+}
