@@ -10,52 +10,84 @@
     <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
 </head>
 <body>
-    <!-- nav bar -->
+                                            <!-- nav bar -->
     <nav class="nav">
-        <a href="#main">Profile</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <!-- logo -->
+        <div id="logoContainer">
+            <img src="./img/my-logo.png" id="my-logo">
+        </div>
+        <!-- links -->
+        <ul id="links">
+            <li>
+              <a href="#main">Profile</a>
+              <hr>
+            </li>
+            <li>
+              <a href="#about">About</a>
+              <hr>
+            </li>
+            <li>
+              <a href="#contact">Contact</a>
+              <hr>
+            </li>
+        </ul>
     </nav>
-    <!-- logo -->
-    <div id="logoContainer">
-        <img src="./img/my-logo.png" id="my-logo">
-    </div>
     <!-- uppercontext -->
     <div class="uppercontext">
-        <span id="hello">"Hello"</span>
-        <br>
-        <a id="my">My name is </a>
-    <div id="name"><span id="upper-cumma1">"</span> <span class="molaybera">Malay Bera</span> <span id="upper-cumma2">"</span></div>
+        <h3 id="hello">"Hello"</h3>
+        <h4 id="my">My name is</h4>
+    <div id="name"><span id="upper-cumma">"</span> <span class="molaybera">Malay Bera</span> <span id="upper-cumma">"</span></div>
     </div>
-    <!-- main -->
+                                            <!-- main -->
     <div id="main">
-        <img src="./img/molay.jpeg" class="ProfileImg">
+        <div class="imgBox">
+            <img src="./img/molay.jpeg" class="ProfileImg">
+        </div>
         <!-- id = "main-text' -->
-        <h1>I'am <span id="main-text"></span></h1>
+         <div>
+             <h1>I'am <span id="main-text"></span></h1>
+         </div>
         <!-- hidden pra -->
-        <p id="hidden-paragraph"><span id="mid-p">Hello</span>,
-            <span class="w">W</span><span class="e">e</span><span class="l">l</span><span class="c">c</span><span class="o">o</span><span class="m">m</span><span class="e">e</span> 
-            <span class="t">t</span><span class="o">o</span> <span class="m">m</span><span class="y">y</span> 
-            <span class="m">M</span><span class="y">y</span> 
-            <span class="p">P</span><span class="o">o</span><span class="r">r</span><span class="t">t</span><span class="f">f</span><span class="o">o</span><span class="l">l</span><span class="i">i</span><span class="o">o</span>.
-        </p>
+         <div>
+            <p id="hidden-paragraph"><span id="mid-p">Hello</span>,
+                <span class="bigWhenHover">W</span><span class="bigWhenHover">e</span><span class="bigWhenHover">l</span><span class="bigWhenHover">c</span><span class="bigWhenHover">o</span><span class="bigWhenHover">m</span><span class="bigWhenHover">e</span> 
+                <span class="bigWhenHover">t</span><span class="bigWhenHover">o</span> <span class="bigWhenHover">m</span><span class="bigWhenHover">y</span> 
+                <span class="bigWhenHover">M</span><span class="bigWhenHover">y</span> 
+                <span class="bigWhenHover">P</span><span class="bigWhenHover">o</span><span class="bigWhenHover">r</span><span class="bigWhenHover">t</span><span class="bigWhenHover">f</span><span class="bigWhenHover">o</span><span class="bigWhenHover">l</span><span class="bigWhenHover">i</span><span class="bigWhenHover">o</span>.
+            </p>
+        </div>
     </div>
-    <!-- about -->
+                                            <!-- about -->
     <div id="about">
         <div class="about-pra">
-            <center><h3>🧑‍💻</h3></center>
+            <div class="praBox">
+            <h3>🧑‍💻</h3>
             <p>I'm a Computer Science student who turns Coffee into code and bugs into features . I love building practical solutions and Change problems to opportunity. Always exploring the latest tech world—because why not make life easier with a few lines of code?</p>
+            </div>
         </div>
 
-        <section class="skills">
+        <div class="skills">
             <div>HTML</div>
             <div>CSS</div>
             <div>java script</div>
             <div>Node js</div>
             <div>Python</div>
             <div>Java</div>
-        </section>
-
+        </div>
+                <!-- card slider -->
+    <div class="swiperCardAndButton">
+        <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoplay="true" autoplay-delay="1000" free-mode="true" mousewheel="true" pagination="true">
+            <swiper-slide><img src="./img/icon_img/html.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/css.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/java_script.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/reacts.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/nodejs.png" alt="img"></swiper-slide>
+            <swiper-slide><img src="./img/icon_img/python.png" alt="img"></swiper-slide>
+        </swiper-container> 
+          <div class="swiper-pagination"></div>
+          <!-- download button -->
+              <a href="./assects/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download CV</a>
+    </div>
     <div class="cards-container">
         <div class="card">
             <h2>Projects</h2>
@@ -78,56 +110,53 @@
             <a href="https://molaybera.github.io/Qr-Code-Generator/" class="btn" target="_blank">Explore</a>
         </div>
     </div>
-
-        <!-- card slider -->
-    <div class="swiperCard">
-        <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoplay="true" autoplay-delay="1000" free-mode="true" mousewheel="true" pagination="true">
-            <swiper-slide><img src="./img/icon_img/html.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/css.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/java_script.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/reacts.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/nodejs.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/python.png" alt="img"></swiper-slide>
-        </swiper-container> 
-          <div class="swiper-pagination"></div>
     </div>
-<!-- download button -->
-        <a href="./assects/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download CV</a>
-    </div>
-<!-- Contact -->
-<div id="contact">
-    <!-- contact box -->
-    <div class="contact-box">
-        <div class="left-title">
-            <h2>Get in Touch</h2>
+                                            <!-- Contact -->
+    <div id="contact">
+        <!-- contact-area -->
+      <div class="contact-area">
+        <!-- contact box -->
+        <div class="contact-box">
+          <div class="left-title">
+            <h2>Get in Touch</h2> 
             <hr>
-        </div>
-        <a href="mailto:molaybera299@gmail.com" class="MailButton" target="_blank">Click Me</a>
-    </div>
-    <!-- mail img -->
-    <div class="contact-img">
-        <img src="./img/icon_img/Mail.png" alt="img">
-    </div>
-    <!-- socila Media  -->
-    <div class="Social-media">
-        <div class="icon-wrapper">
-          <img src="./img/socialmedia_img/linkedin.png" alt="linkedin-Img" class="social-media-icon">
-          <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="icon-link">linkedin</a>
-        </div>
-        <div class="icon-wrapper">
-          <img src="./img/socialmedia_img/facebook.png" alt="facebook-Img" class="social-media-icon">
-          <a href="https://www.facebook.com/molay.bera.161" target="_blank" class="icon-link">facebook</a>
-        </div>
-        <div class="icon-wrapper">
-          <img src="./img/socialmedia_img/instagram.png" alt="instagram-Img" class="social-media-icon">
-          <a href="https://www.instagram.com/molay_bera1" target="_blank" class="icon-link" id="instagram">instagram</a>
-        </div>
-        <div class="icon-wrapper">
-          <img src="./img/socialmedia_img/github.png" alt="github-img" class="social-media-icon" style="border: 2px solid black;">
-          <a href="https://github.com/Molaybera" target="_blank" class="icon-link">github</a>
+          </div>
+          <a href="https://mail.google.com/mail/?view=cm&to=molaybera299@gmail.com" 
+               target="_blank"
+               rel="noopener noreferrer" 
+               class="MailButton" 
+               onclick="copyEmail()">
+               Email Me
+            </a>
+          </div>
+        <!-- mail img -->
+        <div class="contact-img">
+          <img src="./img/icon_img/Mail.png" alt="img">
         </div>
       </div>
-    
+        <!-- socila Media  -->
+        <div class="Social-media">
+            <div class="icon-wrapper">
+              <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="icon-link">linkedin</a>
+              <img src="./img/socialmedia_img/linkedin.png" alt="linkedin-Img">
+              <hr>
+            </div>
+            <div class="icon-wrapper">
+              <a href="https://www.facebook.com/molay.bera.161" target="_blank" class="icon-link">facebook</a>
+              <img src="./img/socialmedia_img/facebook.png" alt="facebook-Img">
+              <hr>
+            </div>
+            <div class="icon-wrapper">
+              <a href="https://www.instagram.com/molay_bera1" target="_blank" class="icon-link" id="instagram">instagram</a>
+              <img src="./img/socialmedia_img/instagram.png" alt="instagram-Img">
+              <hr>
+            </div>
+            <div class="icon-wrapper">
+              <a href="https://github.com/Molaybera" target="_blank" class="icon-link">github</a>
+              <img src="./img/socialmedia_img/github.png" alt="github-img" style="border: 2px solid black;">
+              <hr>  
+            </div>
+          </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
