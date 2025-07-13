@@ -128,7 +128,7 @@ function copyEmail() {
 
 const email = "molaybera299@gmail.com";
 const emailLink = document.getElementById('EmailLink');
-if(window.innerWidth <= 500) {
+if(window.innerWidth <= 768) {
     emailLink.href = `mailto:${email}`;
     emailLink.removeAttribute("target");
 } else { 
