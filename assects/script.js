@@ -20,32 +20,6 @@ if (window.innerWidth > 425) {
   });
 }
 
-
-// welcome to my protfolio
-gsap.registerPlugin(ScrollTrigger);
-
-// Apply effects only for screens larger than 425px
-if (window.innerWidth > 425) {
-  gsap.to('#main #hidden-paragraph', {
-    scale: 1.5,
-    opacity: 1,
-    scrollTrigger: {
-      trigger: '#main #hidden-paragraph',
-      scroller: 'body',
-      markers: false,
-      start: 'top 70%',
-      end: 'top 40%',
-      scrub: 2,
-    },
-  });
-} else {
-  // No effects for screens 425px or less
-  gsap.set('#main #hidden-paragraph', {
-    opacity: 1, // Set to a default static value
-    scale: 1,   // Ensure no scale is applied
-  });
-}
-
 document.addEventListener("DOMContentLoaded", function() {
     // nav
     gsap.from('.nav',{
