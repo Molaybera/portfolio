@@ -1,0 +1,244 @@
+:root {
+  --blue: #00a6ff;
+  --black: #101416;
+  --dark-bg: #1a1d1f; /* A dark gray that complements your black */
+}
+
+body {
+  background-color: var(--dark-bg);
+  color: #fff;
+  font-family: 'Fira Code', 'Courier New', monospace; /* A classic coding font */
+}
+
+/* custome menu on right click */
+#custom-context-menu {
+  position: absolute;
+  background-color: var(--black);
+  border: 1px solid var(--blue);
+  border-radius: 5px;
+  padding: 5px 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  z-index: 10000;
+  width: 200px;
+}
+.context-menu-item {
+  padding: 10px 15px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Fira Code', monospace;
+  transition: all 0.2s ease;
+}
+.context-menu-item:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+.hidden {
+  display: none;
+}
+
+/* Container to help center the button */
+.back-button-container {
+  text-align: center;
+  margin-top: 20px; /* Adds space above the button */
+  padding-bottom: 40px; /* Adds space at the very bottom of the page */
+}
+
+/* Styling for the back button */
+.back-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for the button */
+.back-button:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+.terminal-window {
+  background-color: var(--black);
+  border: 1px solid #444;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 40px auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  font-family: 'Fira Code', monospace;
+}
+
+.terminal-header {
+  background-color: #333;
+  padding: 10px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  display: flex;
+  align-items: center;
+  color: #ccc;
+}
+
+.dots .dot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 6px;
+}
+.dot.red { background-color: #ff5f56; }
+.dot.yellow { background-color: #ffbd2e; }
+.dot.green { background-color: #27c93f; }
+.terminal-header span { margin-left: 20px; }
+
+.terminal-body {
+  padding: 20px;
+}
+
+.prompt-arrow {
+  color: var(--blue);
+  margin-right: 10px;
+}
+
+.certificate-item {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 15px;
+  margin-left: 25px;
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.certificate-item:hover {
+  background-color: rgba(0, 166, 255, 0.1); /* Use your blue with transparency */
+  color: var(--blue);
+}
+
+.file-icon {
+  color: var(--blue);
+  margin-right: 15px;
+}
+
+.file-details {
+  color: #888;
+  margin-left: 20px;
+  font-style: italic;
+  font-size: 0.9em;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+
+
+/* New styles for the mini cards */
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-left: 25px;
+  margin-top: 10px;
+}
+
+.cert-card-mini {
+  background-color: #222;
+  border: 1px solid #444;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cert-card-mini:hover {
+  background-color: var(--black);
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.cert-card-mini .file-icon {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* Styles for the script output area */
+#script-container {
+  font-family: 'Fira Code', monospace;
+  white-space: pre-wrap; /* Allows text to wrap */
+  line-height: 1.6;
+}
+
+/* Styles for the Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  position: relative;
+  background-color: var(--black);
+  padding: 20px; /* Padding for the content *inside* the black box */
+  border-radius: 8px;
+  max-width: 80vw;
+  max-height: 90vh;
+  /* IMPORTANT: Add padding-top to make space for the close button */
+  padding-top: 40px; /* Adjust if your close button is larger */
+  display: flex; /* Use flex to easily center the image if needed */
+  justify-content: center;
+  align-items: center;
+}
+
+#modal-image {
+  max-width: 100%;
+  max-height: 100%; /* Will respect the max-height of modal-content */
+  display: block;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px; /* Distance from the top of the modal-content black box */
+  right: 20px; /* Distance from the right of the modal-content black box */
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001; /* Ensure it's above everything else */
+  /* Add some background to make it stand out more, even against busy images */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  border-radius: 50%; /* Make it circular */
+  width: 35px; /* Adjust size */
+  height: 35px; /* Adjust size */
+  display: flex; /* To center the 'x' */
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.close-button:hover {
+  background-color: var(--blue); /* Your blue on hover */
+  color: var(--black); /* Black text on blue hover */
+}
+
+.hidden {
+  display: none !important;
+}

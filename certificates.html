@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates</title>
+    <link rel="stylesheet" href="./assects/stylesheet/certificates.css">
+    <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assects/stylesheet/customRightClick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<!-- custom menu -->
+    <div id="custom-context-menu">
+      <!-- resume download -->
+      <div class="context-menu-item" id="download-Resume">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download Resume</span>
+      </div>
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>Back to Home</span>
+      </div>
+    </div>
+
+  <div class="back-button-container">
+    <a href="index.html" class="back-button">&lt;-- Go Back Home</a>
+  </div>
+  <div class="terminal-window">
+  <div class="terminal-header">
+    </div>
+  <div class="terminal-body">
+    
+    <div id="cert-list-container">
+      <p><span class="prompt-arrow">&gt;</span> ls -l ./certificates</p>
+      <div class="cert-grid">
+        
+        <div class="cert-card-mini" data-title="Python Programming" data-image-src="./assects/certificates/PythonProgramming.png">
+          <span class="file-icon">[PY]</span>
+          <span>Python Programming</span>
+        </div>
+
+        <div class="cert-card-mini" data-title="Cyber Security" data-image-src="./assects/certificates/CyberSecurity.png">
+          <span class="file-icon">[CS]</span>
+          <span>Cyber Security</span>
+        </div>
+      </div>
+      <p><span class="prompt-arrow">&gt;</span> <span class="blinking-cursor">_</span></p>
+    </div>
+
+    <div id="script-container" class="hidden">
+      </div>
+
+  </div>
+</div>
+
+<div id="cert-modal" class="modal-overlay hidden">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <img id="modal-image" src="" alt="Certificate Image">
+  </div>
+</div>
+
+<script src="./assects/javascript/certificates.js" defer></script>
+<script src="./assects/javascript/customRightClick.js" defer></script>
+</body>
+</html>
