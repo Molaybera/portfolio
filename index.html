@@ -4,12 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Protfolio</title>
-    <link rel="stylesheet" href="./assects/style.css">
+    <link rel="stylesheet" href="./assects/stylesheet/style.css">
+    <link rel="stylesheet" href="./assects/stylesheet/customRightClick.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
 </head>
 <body>
+<!-- custom menu -->
+    <div id="custom-context-menu">
+      <!-- resume download -->
+      <div class="context-menu-item" id="download-Resume">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+        <span>Download Resume</span>
+      </div>
+      <!-- certifiacte page -->
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-certs">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>View Certificates</span>
+      </div>
+      <!-- profile -->
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-profile">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>View Profile Section</span>
+      </div>
+      <!-- about -->
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-about">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>View About Section</span>
+      </div>
+      <!-- contact -->
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-contact">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>View Contact Section</span>
+      </div>
+    </div>
                                             <!-- nav bar -->
     <nav class="nav">
         <!-- logo -->
@@ -30,6 +63,10 @@
               <a href="#contact">Contact</a>
               <hr>
             </li>
+            <li>
+              <a href="./certificates.html">Certificates</a>
+            <hr>
+          </li>
         </ul>
     </nav>
     <!-- uppercontext -->
@@ -43,7 +80,7 @@
         <div class="imgBox">
             <img src="./img/molay.png" class="ProfileImg">
         </div>
-        <!-- id = "main-text' -->
+        <!-- sentence chnage effect -->
          <div>
              <h1>I'am <span id="main-text"></span></h1>
          </div>
@@ -85,8 +122,8 @@
             <swiper-slide><img src="./img/icon_img/python.png" alt="img"></swiper-slide>
         </swiper-container> 
           <div class="swiper-pagination"></div>
-          <!-- download button -->
-              <a href="./assects/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download CV</a>
+                 <!-- download button -->
+          <a href="./assects/resume/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download Resume</a>
     </div>
     <div class="cards-container">
         <div class="card">
@@ -121,13 +158,10 @@
             <h2>Get in Touch</h2> 
             <hr>
           </div>
-          <a  id="EmailLink"
-              class="MailButton" 
-              target="_blank"
-              rel="noopener noreferrer" 
-              onclick="copyEmail()">
-                Email Me
-            </a>
+            <div id="contact-btn">
+              <a id="EmailLink" class="MailButton" target="_blank" rel="noopener noreferrer">Email Me</a>
+              <a onclick="copyEmail()">Copy Email Address</a>
+            </div>
           </div>
         <!-- mail img -->
         <div class="contact-img">
@@ -138,7 +172,7 @@
         <div class="Social-media">
             <div class="icon-wrapper">
               <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="icon-link">
-                <span>Linkedin</span>
+                <span>linkedin</span>
                 <img src="./img/socialmedia_img/linkedin.png" alt="linkedin-Img">
               </a>
               <hr>
@@ -169,7 +203,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="./assects/script.js" defer></script>
+    <script src="./assects/javascript/script.js" defer></script>
+    <script src="./assects/javascript/customRightClick.js" defer></script>
+
 
 </body>
 </html>
