@@ -92,10 +92,19 @@ document.addEventListener("DOMContentLoaded", function() {
     type();
 
     // copying the email funciton
-    function copyEmail() {
+    const copyBtn = document.getElementById("copyEmailBtn");
+
+    // Add the click event listener
+    copyBtn.addEventListener("click", () => {
       navigator.clipboard.writeText("molaybera299@gmail.com");
-      alert("Email copied to clipboard!");
-    }
+
+      // Optional: Give the user feedback
+      copyBtn.textContent = "Email Copied!";
+      setTimeout(() => {
+        copyBtn.textContent = "Copy Email Address";
+      }, 2000); // Reset the text after 2 seconds
+    });
+    
     //when the screen size is less then 500 then change the web mail to app mail
     const email = "molaybera299@gmail.com";
     const emailLink = document.getElementById('EmailLink');
@@ -107,3 +116,4 @@ document.addEventListener("DOMContentLoaded", function() {
     
     }
 });
+
