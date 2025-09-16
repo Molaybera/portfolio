@@ -66,6 +66,7 @@ body {
 }
 
 .terminal-window {
+  color: #27c93f;
   background-color: var(--black);
   border: 1px solid #444;
   border-radius: 8px;
@@ -241,4 +242,5 @@ body {
 
 .hidden {
   display: none !important;
+
 }
