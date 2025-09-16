@@ -35,7 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
             scriptContainer.classList.remove('hidden');
             const scriptText = `> ./view_cert.sh --name="${certTitle}"
 [INFO] Initializing image renderer...
-[INFO] Fetching resource from remote repository...
+               .--.
+              |o_o |;
+              |:-: |
+             //   / /
+            (|     | )
+            / |_  _/ |
+            |__)==(__/
 [SUCCESS] Render complete. Displaying image now.
 > `;
             simulateTyping(scriptText, () => {
@@ -53,4 +59,5 @@ document.addEventListener('DOMContentLoaded', () => {
             closeModal();
         }
     });
+
 });
