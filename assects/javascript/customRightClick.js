@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
           downloadButton.addEventListener("click", () => {
                 const link = document.createElement('a');
                 link.href = './assects/resume/MalayBera-Resume-zipfile.zip';
-                link.download = 'Malay-Bera_Resume.zip';
+                link.download = 'MalayBera-Resume-zipfile.zip';
                 link.click();
           });
         }
