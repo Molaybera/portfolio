@@ -1,0 +1,199 @@
+#about {
+    width: 100%;
+    min-height: 100vh;
+    padding: 60px 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 1. TOP ROW: BIO TERMINAL */
+.bio-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.bio-terminal {
+    width: 100%;
+    max-width: 800px; /* Limits width so it doesn't look stretched */
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 166, 255, 0.15);
+    border: 1px solid #333;
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #2d2d2d;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+.buttons { display: flex; gap: 8px; margin-right: 15px; }
+.dot { width: 12px; height: 12px; border-radius: 50%; }
+.red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+.title { color: #888; font-family: monospace; font-size: 0.9rem; }
+
+.terminal-body {
+    padding: 25px;
+    font-family: 'Courier New', monospace;
+}
+
+.code-text { color: #a9b7c6; margin-bottom: 15px; font-size: 0.95rem; }
+.keyword { color: #cc7832; } .var { color: #9876aa; } .string { color: #6a8759; }
+
+.bio-desc {
+    color: #dcdcdc;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--blue);
+    padding-left: 15px;
+}
+
+.terminal-btn {
+    display: inline-block;
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: bold;
+    font-family: monospace;
+    transition: 0.3s;
+}
+.terminal-btn:hover { text-shadow: 0 0 10px var(--blue); }
+
+/* 2. SPLIT ROW: SKILLS (Left) & VISUALS (Right) */
+.split-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 50% - 50% Split */
+    gap: 40px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Left Column: Skills */
+.tech-panel {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #333;
+}
+
+.panel-title { color: var(--blue); font-family: "Rubik Scribble", system-ui; margin-bottom: 20px; text-align: center; }
+.sub-title { color: #888; font-family: monospace; margin: 15px 0 10px 0; border-bottom: 1px solid #444; display: inline-block; }
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tag {
+    padding: 8px 16px;
+    background: #111;
+    border: 1px solid var(--blue);
+    border-radius: 20px;
+    color: white;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.tag:hover {
+    background: var(--blue);
+    color: black;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 166, 255, 0.3);
+}
+
+.tag.soft { border-color: #a855f7; }
+.tag.soft:hover { background: #a855f7; box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3); }
+
+/* Right Column: Visual Scanner */
+.visual-scanner {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 20px;
+    background: radial-gradient(circle, rgba(0,166,255,0.05) 0%, transparent 70%);
+}
+
+.scan-line {
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    background: var(--blue);
+    top: 0;
+    animation: scanner 3s linear infinite;
+    z-index: 5;
+    opacity: 0.5;
+    box-shadow: 0 0 15px var(--blue);
+}
+
+@keyframes scanner { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
+
+/* Fix Swiper Size */
+swiper-container {
+    width: 280px !important;
+    height: 380px !important;
+    max-width: 100%;
+}
+swiper-slide img{
+    width: 250px;
+    height: 300px;
+    background: transparent;
+}
+swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px;
+    background-color: var(--black);
+}
+
+@media screen and (max-width: 900px) {
+    .split-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .col-right {
+        order: -1; 
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #about { padding: 40px 15px; }
+    
+    .bio-terminal { width: 100%; }
+    
+    .code-text { display: none; } 
+    
+    swiper-container {
+        width: 120px !important;
+        height: 200px !important;
+    }
+
+    .scan-line {
+        width: 60%;
+    }
+    
+    swiper-slide img {
+        width: 50%;
+        height: 70%;
+        object-fit: contain;
+    }
+}
+

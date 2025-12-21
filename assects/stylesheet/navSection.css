@@ -1,0 +1,178 @@
+:root {
+    --blue: #00a6ff;
+    --green: #00ff41;
+    --dark-bg: #101416;
+    --glass: rgba(16, 20, 22, 0.98);
+    --text-color: #ecf0f1;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background-color: var(--dark-bg); 
+    font-family: 'Fira Code', monospace;
+    height: 200vh;
+    color: var(--text-color);
+}
+
+.tech-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background: var(--glass);
+    padding: 0 2rem; 
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid rgba(0, 166, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    z-index: 1001; 
+}
+.logo-img {
+    height: 40px;
+    width: auto;
+    display: block;
+}
+.logo-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+.highlight { color: var(--blue); }
+/* --- 2. NAV LINKS --- */
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    align-items: center;
+}
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+/* Tech Bracket Effect on Hover */
+.nav-links a::before, 
+.nav-links a::after {
+    position: absolute;
+    opacity: 0;
+    color: var(--blue);
+    transition: all 0.3s ease;
+    top: 5px; 
+}
+
+.nav-links a::before { content: '['; left: -15px; }
+.nav-links a::after { content: ']'; right: -15px; }
+.nav-links a:hover {
+    color: var(--blue);
+}
+.nav-links a:hover::before { opacity: 1; left: -10px; }
+.nav-links a:hover::after { opacity: 1; right: -10px; }
+/* --- 3. STATUS WIDGET --- */
+.status-widget {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.8);
+    border: 1px solid rgba(0, 255, 65, 0.2);
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: rgba(0, 255, 65, 0.05);
+}
+.status-dot {
+    height: 8px;
+    width: 8px;
+    background-color: var(--green);
+    border-radius: 50%;
+    margin-right: 10px;
+    box-shadow: 0 0 10px var(--green);
+    animation: pulse 2s infinite;
+}
+.user-highlight {
+    color: var(--green);
+    font-weight: 600;
+    margin-right: 5px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    z-index: 1003;
+}
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+/* --- ANIMATIONS --- */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes navLinkFade {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@media screen and (max-width: 1024px) {
+    .tech-nav { padding: 0 1.5rem; }
+    .nav-links { gap: 1.5rem; }
+    .logo-text { font-size: 1.2rem; }
+    .status-text-detail { display: none; }
+}
+
+@media screen and (max-width: 768px) {
+    .status-widget { display: none; }
+    
+    /* Show Burger */
+    .burger { display: block; }
+
+    .nav-links {
+        position: absolute;
+        right: 0;
+        height: 100vh;
+        top: 0;
+        background-color: var(--dark-bg);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 70%; 
+        transform: translateX(100%);
+        transition: transform 0.4s ease-in-out;
+        border-left: 2px solid var(--blue);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.5);
+        z-index: 1002;
+    }
+    .nav-links li {
+        opacity: 0; 
+        margin: 20px 0;
+    }
+    .nav-links a {
+        font-size: 1.2rem; 
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+.toggle .line1 { transform: rotate(-45deg) translate(-5px, 6px); background: var(--blue); }
+.toggle .line2 { opacity: 0; }
+.toggle .line3 { transform: rotate(45deg) translate(-5px, -6px); background: var(--blue); }

@@ -1,68 +1,13 @@
 :root {
+  --black: #0d1117;
   --blue: #00a6ff;
-  --black: #101416;
-  --dark-bg: #1a1d1f; /* A dark gray that complements your black */
 }
 
 body {
-  background-color: var(--dark-bg);
-  color: #fff;
-  font-family: 'Fira Code', 'Courier New', monospace; /* A classic coding font */
-}
-
-/* custome menu on right click */
-#custom-context-menu {
-  position: absolute;
   background-color: var(--black);
-  border: 1px solid var(--blue);
-  border-radius: 5px;
-  padding: 5px 0;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-  z-index: 10000;
-  width: 200px;
-}
-.context-menu-item {
-  padding: 10px 15px;
-  color: #fff;
-  cursor: pointer;
+  margin: 0;
+  padding: 0;
   font-family: 'Fira Code', monospace;
-  transition: all 0.2s ease;
-}
-.context-menu-item:hover {
-  background-color: var(--blue);
-  color: var(--black);
-}
-.hidden {
-  display: none;
-}
-
-/* Container to help center the button */
-.back-button-container {
-  text-align: center;
-  margin-top: 20px; /* Adds space above the button */
-  padding-bottom: 40px; /* Adds space at the very bottom of the page */
-}
-
-/* Styling for the back button */
-.back-button {
-  display: inline-block;
-  padding: 12px 24px;
-  border: 2px solid var(--blue);
-  color: var(--blue);
-  background-color: transparent;
-  text-decoration: none;
-  font-family: 'Fira Code', monospace;
-  font-size: 1em;
-  font-weight: bold;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-/* Hover effect for the button */
-.back-button:hover {
-  background-color: var(--blue);
-  color: var(--black);
 }
 
 .terminal-window {
@@ -74,8 +19,31 @@ body {
   margin: 40px auto;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
   font-family: 'Fira Code', monospace;
+  position: relative; 
+  overflow: hidden; 
 }
 
+.scanlines {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%; 
+    height: 100%; 
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0) 50%,
+        rgba(0, 0, 0, 0.2) 50%,
+        rgba(0, 0, 0, 0.2)
+    );
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.4; 
+    border-radius: 8px; 
+}
+
+/* --- TERMINAL HEADER --- */
 .terminal-header {
   background-color: #333;
   padding: 10px;
@@ -84,6 +52,8 @@ body {
   display: flex;
   align-items: center;
   color: #ccc;
+  position: relative;
+  z-index: 11; 
 }
 
 .dots .dot {
@@ -100,6 +70,8 @@ body {
 
 .terminal-body {
   padding: 20px;
+  position: relative;
+  z-index: 5;
 }
 
 .prompt-arrow {
@@ -107,45 +79,7 @@ body {
   margin-right: 10px;
 }
 
-.certificate-item {
-  display: block;
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 15px;
-  margin-left: 25px;
-  border-radius: 4px;
-  transition: all 0.2s ease-in-out;
-}
-
-.certificate-item:hover {
-  background-color: rgba(0, 166, 255, 0.1); /* Use your blue with transparency */
-  color: var(--blue);
-}
-
-.file-icon {
-  color: var(--blue);
-  margin-right: 15px;
-}
-
-.file-details {
-  color: #888;
-  margin-left: 20px;
-  font-style: italic;
-  font-size: 0.9em;
-}
-
-@keyframes blink {
-  from, to { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-.blinking-cursor {
-  animation: blink 1s step-end infinite;
-}
-
-
-
-/* New styles for the mini cards */
+/* --- CERTIFICATE GRID & CARDS --- */
 .cert-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -161,6 +95,8 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.2s ease;
+  /* FIX: Ensure content doesn't spill */
+  overflow: hidden; 
 }
 
 .cert-card-mini:hover {
@@ -174,14 +110,36 @@ body {
   font-weight: bold;
 }
 
-/* Styles for the script output area */
+.nameOfCert {
+  display: inline-block;
+  max-width: 100%;
+  white-space: nowrap; 
+  overflow: hidden;  
+  text-overflow: ellipsis; 
+  vertical-align: middle;
+}
+
+/* --- UTILS --- */
+.blinking-cursor {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
 #script-container {
   font-family: 'Fira Code', monospace;
-  white-space: pre-wrap; /* Allows text to wrap */
+  white-space: pre-wrap;
   line-height: 1.6;
 }
 
-/* Styles for the Modal */
+.hidden {
+  display: none !important;
+}
+
+/* --- MODAL --- */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -198,49 +156,92 @@ body {
 .modal-content {
   position: relative;
   background-color: var(--black);
-  padding: 20px; /* Padding for the content *inside* the black box */
+  padding: 20px;
   border-radius: 8px;
   max-width: 80vw;
   max-height: 90vh;
-  /* IMPORTANT: Add padding-top to make space for the close button */
-  padding-top: 40px; /* Adjust if your close button is larger */
-  display: flex; /* Use flex to easily center the image if needed */
+  padding-top: 40px;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
 #modal-image {
   max-width: 100%;
-  max-height: 100%; /* Will respect the max-height of modal-content */
+  max-height: 100%;
   display: block;
 }
 
 .close-button {
   position: absolute;
-  top: 10px; /* Distance from the top of the modal-content black box */
-  right: 20px; /* Distance from the right of the modal-content black box */
+  top: 10px;
+  right: 20px;
   color: #fff;
   font-size: 30px;
   font-weight: bold;
   cursor: pointer;
-  z-index: 1001; /* Ensure it's above everything else */
-  /* Add some background to make it stand out more, even against busy images */
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
-  border-radius: 50%; /* Make it circular */
-  width: 35px; /* Adjust size */
-  height: 35px; /* Adjust size */
-  display: flex; /* To center the 'x' */
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
   justify-content: center;
   align-items: center;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .close-button:hover {
-  background-color: var(--blue); /* Your blue on hover */
-  color: var(--black); /* Black text on blue hover */
+  background-color: var(--blue);
+  color: var(--black);
 }
 
-.hidden {
-  display: none !important;
-
+/* --- GLITCH ANIMATION --- */
+@keyframes glitch-anim {
+    0% { transform: translate(0); clip-path: inset(0 0 0 0); }
+    20% { transform: translate(-2px, 2px); clip-path: inset(10% 0 80% 0); }
+    40% { transform: translate(2px, -2px); clip-path: inset(80% 0 10% 0); }
+    60% { transform: translate(-2px, 2px); clip-path: inset(40% 0 40% 0); }
+    80% { transform: translate(2px, -2px); clip-path: inset(20% 0 60% 0); }
+    100% { transform: translate(0); clip-path: inset(0 0 0 0); }
 }
+
+.modal-content.glitch-active {
+    animation: glitch-anim 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+    border: 1px solid var(--blue);
+    box-shadow: 0 0 20px var(--blue);
+}
+
+/* --- BACK BUTTON --- */
+.back-button-container {
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  background-color: transparent;
+  text-decoration: none;
+  font-family: 'Fira Code', monospace;
+  font-size: 1em;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: var(--blue);
+  color: var(--black);
+}
+
+/* --- TERMINAL COLORS --- */
+.log-info { color: #00a6ff; }
+.log-warn { color: #ffbd2e; }
+.log-error { color: #ff5f56; }
+.log-success { color: #27c93f; }
+.log-hex { color: #555; }

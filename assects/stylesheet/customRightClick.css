@@ -1,51 +1,68 @@
-#custom-context-menu {
-  position: absolute;
-  background-color: #161a1d;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 8px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  z-index: 10000;
-  width: 220px;
-  opacity: 0;
-  transform: scale(0.95) translateY(10px);
-  pointer-events: none;
-  transition: opacity 0.15s ease-out, transform 0.15s ease-out;
+:root {
+  --menu-bg: rgba(13, 17, 23, 0.95); /* Dark, slightly transparent */
+  --menu-border: rgba(0, 166, 255, 0.3); /* Subtle blue border */
+  --menu-glow: 0 0 15px rgba(0, 166, 255, 0.15); /* Blue glow */
+  --hover-blue: #00a6ff;
 }
 
-/* This class will be toggled by JavaScript to show the menu */
+#custom-context-menu {
+  position: fixed; 
+  background-color: var(--menu-bg);
+  backdrop-filter: blur(5px);
+  border: 1px solid var(--menu-border);
+  box-shadow: var(--menu-glow);
+  border-radius: 6px;
+  padding: 6px 0;
+  width: 240px;
+  z-index: 10000;
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+  transition: opacity 0.1s ease-out, transform 0.1s ease-out;
+}
+
 #custom-context-menu.visible {
   opacity: 1;
-  transform: scale(1) translateY(0);
+  transform: scale(1);
   pointer-events: auto;
 }
 
-/* Styling for the items inside the menu */
 .context-menu-item {
   display: flex;
   align-items: center;
-  padding: 10px 12px;
-  color: #ccc;
+  padding: 10px 15px;
+  color: #a0a0a0;
   cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
 }
 
 .context-menu-item:hover {
-  background-color: var(--blue);
-  color: var(--black);
+  background-color: rgba(0, 166, 255, 0.1);
+  color: var(--hover-blue);
+  padding-left: 20px; 
 }
 
-/* Styling for the SVG icons */
+.context-menu-item:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background-color: var(--hover-blue);
+  box-shadow: 0 0 8px var(--hover-blue);
+}
+
 .context-menu-item svg {
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   margin-right: 12px;
+  stroke-width: 2px;
 }
 
-/* Styling for the separator line */
 .context-menu-separator {
   height: 1px;
-  background-color: #333;
-  margin: 6px 0;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  margin: 4px 0;
 }

@@ -6,12 +6,21 @@
     <title>Protfolio</title>
     <link rel="stylesheet" href="./assects/stylesheet/style.css">
     <link rel="stylesheet" href="./assects/stylesheet/customRightClick.css">
+    <link rel="stylesheet" href="./assects/stylesheet/particles.css">
+    <link rel="stylesheet" href="./assects/stylesheet/navSection.css">
+    <link rel="stylesheet" href="./assects/stylesheet/mainSection.css">
+    <link rel="stylesheet" href="./assects/stylesheet/aboutSection.css">
+    <link rel="stylesheet" href="./assects/stylesheet/projectSection.css">
+    <link rel="stylesheet" href="./assects/stylesheet/contactSection.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
 </head>
 <body>
-<!-- custom menu -->
+  <!-- particles -->
+  <div id="particles-js"></div>
+                                          <!-- custom menu -->
     <div id="custom-context-menu">
       <!-- resume download -->
       <div class="context-menu-item" id="download-Resume">
@@ -36,6 +45,12 @@
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
         <span>View About Section</span>
       </div>
+      <!-- project -->
+      <div class="context-menu-separator"></div>
+      <div class="context-menu-item" id="view-projects">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path><path d="M15.414 8.414a5 5 0 1 0 -7.828 7.172"></path><path d="M6.586 15.414a5 5 0 1 0 7.828 -7.172"></path></svg>
+        <span>View Project Section</span>
+      </div>
       <!-- contact -->
       <div class="context-menu-separator"></div>
       <div class="context-menu-item" id="view-contact">
@@ -44,166 +59,396 @@
       </div>
     </div>
                                             <!-- nav bar -->
-    <nav class="nav">
-        <!-- logo -->
-        <div id="logoContainer">
-            <img src="./img/my-logo.png" id="my-logo">
+    <nav class="tech-nav">
+        <!-- 1. LOGO (Clean, no effects) -->
+        <div class="logo-container">
+            <!-- Replace src with your actual logo path -->
+            <img src="./img/my-logo.png" alt="Logo" class="logo-img">
+            <div class="logo-text">
+                <span class="highlight">&lt;</span>DevPort<span class="highlight"> /&gt;</span>
+            </div>
         </div>
-        <!-- links -->
-        <ul id="links">
-            <li>
-              <a href="#main">Profile</a>
-              <hr>
-            </li>
-            <li>
-              <a href="#about">About</a>
-              <hr>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-              <hr>
-            </li>
-            <li>
-              <a href="./certificates.html">Certificates</a>
-            <hr>
-          </li>
+        
+        <!-- 2. LINKS -->
+        <ul class="nav-links">
+            <li><a href="#main">Profile</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="./certificates.html">Certificates</a></li>
         </ul>
-    </nav>
-    <!-- uppercontext -->
-    <div class="uppercontext">
-        <h3 id="hello">"Hello"</h3>
-        <h4 id="my">My name is</h4>
-    <div id="name"><span id="upper-cumma">"</span> <span class="molaybera">Malay Bera</span> <span id="upper-cumma">"</span></div>
-    </div>
-                                            <!-- main -->
-    <div id="main">
-        <div class="imgBox">
-            <img src="./img/molay.png" class="ProfileImg">
-        </div>
-        <!-- sentence chnage effect -->
-         <div>
-             <h1>I'am <span id="main-text"></span></h1>
-         </div>
-        <!-- hidden pra -->
-         <div>
-            <p id="hidden-paragraph"><span id="mid-p">Hello</span>,
-                <span class="bigWhenHover">W</span><span class="bigWhenHover">e</span><span class="bigWhenHover">l</span><span class="bigWhenHover">c</span><span class="bigWhenHover">o</span><span class="bigWhenHover">m</span><span class="bigWhenHover">e</span> 
-                <span class="bigWhenHover">t</span><span class="bigWhenHover">o</span> <span class="bigWhenHover">m</span><span class="bigWhenHover">y</span> 
-                <span class="bigWhenHover">M</span><span class="bigWhenHover">y</span> 
-                <span class="bigWhenHover">P</span><span class="bigWhenHover">o</span><span class="bigWhenHover">r</span><span class="bigWhenHover">t</span><span class="bigWhenHover">f</span><span class="bigWhenHover">o</span><span class="bigWhenHover">l</span><span class="bigWhenHover">i</span><span class="bigWhenHover">o</span>.
-            </p>
-        </div>
-    </div>
-                                            <!-- about -->
-    <div id="about">
-        <div class="about-pra">
-            <div class="praBox">
-            <h3>🧑‍💻</h3>
-            <p>I'm a Computer Science student who turns Coffee into code and bugs into features . I love building practical solutions and Change problems to opportunity. Always exploring the latest tech world because why not make life easier with a few lines of code?</p>
+
+        <!-- 3. STATUS WIDGET (Visible on Desktop/Tablet) -->
+        <div class="status-widget">
+            <div class="status-dot"></div>
+            <div>
+                <span class="user-highlight">root@portfolio</span> 
+                <span class="status-text-detail">: ONLINE</span>
             </div>
         </div>
 
-        <div class="skills">
-            <div>HTML</div>
-            <div>CSS</div>
-            <div>java script</div>
-            <div>Node js</div>
-            <div>Python</div>
-            <div>Java</div>
+        <!-- 4. BURGER (Only Visible on Mobile) -->
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
         </div>
-                <!-- card slider -->
-    <div class="swiperCardAndButton">
-        <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoplay="true" autoplay-delay="1000" free-mode="true" mousewheel="true" pagination="true">
-            <swiper-slide><img src="./img/icon_img/html.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/css.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/java_script.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/reacts.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/nodejs.png" alt="img"></swiper-slide>
-            <swiper-slide><img src="./img/icon_img/python.png" alt="img"></swiper-slide>
-        </swiper-container> 
-          <div class="swiper-pagination"></div>
-                 <!-- download button -->
-          <a href="./assects/resume/MalayBera-Resume-zipfile.zip" class="download-btn" download>Download Resume</a>
+    </nav>
+                                            <!-- main -->
+<div id="main">
+    
+    <div class="hero-text-area">
+        
+        <div class="sys-label">
+            <span class="pulse-dot"></span> SYSTEM_ONLINE
+        </div>
+
+        <h1>
+            <span class="greeting">Hello, I'm</span><br>
+            <span class="name-glitch" data-text="Malay Bera">Malay Bera</span>
+        </h1>
+
+        <div class="typing-container">
+            <span class="prompt">></span> 
+            <span id="main-text"></span><span class="cursorM">|</span>
+        </div>
+
+        <div class="system-log">
+            <p class="log-line">
+                <span class="cmd">Initialize:</span> 
+                <span class="val">Welcome to My Personal Portfolio v2.0</span>
+            </p>
+            <p class="log-line">
+                <span class="cmd">Status:</span> 
+                <span class="val success">Ready for deployment...</span>
+            </p>
+        </div>
+
+        <div class="hero-actions">
+            <a href="#projects" class="cyber-btn-lg">VIEW_PROJECTS</a>
+            <a href="#contact" class="cyber-btn-lg outline">CONTACT_ME</a>
+        </div>
+
     </div>
-    <div class="cards-container">
-        <div class="card">
-            <h2>Projects</h2>
-            <p id="portfolio-projects">poftfoilio builder</p>
-            <a href="https://molaybera.github.io/Portfolio-Builder/" class="btn" target="_blank">Explore</a>
-        </div>
-        <div class="card">
-            <h2>Projects</h2>
-            <p id="portfolio-projects">To-Do-List</p>
-            <a href="https://molaybera.github.io/To-Do-List/" class="btn" target="_blank">Explore</a>
-        </div>
-        <div class="card">
-            <h2>Projects</h2>
-            <p id="portfolio-projects">Weather report</p>
-            <a href="https://molaybera.github.io/Weather-report/" class="btn" target="_blank">Explore</a>
-        </div>
-        <div class="card">
-            <h2>Projects</h2>
-            <p id="portfolio-projects">Qr-Code-Generator</p>
-            <a href="https://molaybera.github.io/Qr-Code-Generator/" class="btn" target="_blank">Explore</a>
+
+    <div class="hero-visual-area">
+        <div class="scanner-ring"></div>
+        
+        <div class="img-wrapper">
+            <img src="./img/malay.png" class="ProfileImg" alt="Profile">
         </div>
     </div>
-    </div>
-                                            <!-- Contact -->
-    <div id="contact">
-        <!-- contact-area -->
-      <div class="contact-area">
-        <!-- contact box -->
-        <div class="contact-box">
-          <div class="left-title">
-            <h2>Get in Touch</h2> 
-            <hr>
-          </div>
-            <div id="contact-btn">
-              <a id="EmailLink" class="MailButton" target="_blank" rel="noopener noreferrer">Email Me</a>
-              <a id="copyEmailBtn">Copy Email</a>
+
+</div>
+                                            <!-- about -->
+    <div class="about-container" id="about">
+        
+        <div class="bio-row">
+            <div class="bio-terminal">
+                <div class="terminal-header">
+                    <div class="buttons">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                    </div>
+                    <span class="title">Malay@portfolio:~/bio.exe</span>
+                </div>
+                <div class="terminal-body">
+                    <p class="code-text">
+                        <span class="keyword">const</span> <span class="var">developer</span> = {<br>
+                        &nbsp;&nbsp;name: <span class="string">"Malay Bera"</span>,<br>
+                        &nbsp;&nbsp;role: <span class="string">"Developer, Data lover, Editor, Creater, Thinker"</span>,<br>
+                        &nbsp;&nbsp;mission: <span class="string">"Make life easier with a few lines of code!"</span><br>
+                        };
+                    </p>
+                    <p class="bio-desc">
+                        I'm a Computer Science student who turns Coffee into code and bugs into features. 
+                        I love building practical solutions and changing problems into opportunities. 
+                        I hate to do task, Love to solve problems.
+                        Always exploring the latest tech world.
+                    </p>
+                    <a href="./assects/resume/MalayBera-Resume-zipfile.zip" class="terminal-btn" download>
+                        > Execute Download_Resume.exe
+                    </a>
+                </div>
             </div>
-          </div>
-        <!-- mail img -->
-        <div class="contact-img">
-          <img src="./img/icon_img/Mail.png" alt="img">
         </div>
+
+        <div class="split-row">
+            
+            <div class="col-left">
+                <div class="tech-panel">
+                    <h3 class="panel-title">&lt; System Modules /&gt;</h3>
+                    
+                    <div class="skill-group">
+                        <h4 class="sub-title">Technical_Stack</h4>
+                        <div class="skill-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Express.js</span>
+                            <span class="tag">Git & Github</span>
+                            <span class="tag">SEO/AEO</span>
+                            <span class="tag">Video Editing</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4 class="sub-title">Soft_Skills</h4>
+                        <div class="skill-tags">
+                            <span class="tag soft">Team Work</span>
+                            <span class="tag soft">Problem Solving</span>
+                            <span class="tag soft">Self Learning</span>
+                            <span class="tag soft">Leadership</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-right">
+                <div class="visual-scanner">
+                    <div class="scan-line"></div>
+                    <swiper-container class="mySwiper" effect="cards" grab-cursor="true" autoplay="true" autoplay-delay="1000" free-mode="true" mousewheel="true" pagination="true">
+                        <swiper-slide><img src="./img/icon_img/html.png" alt="HTML"></swiper-slide>
+                        <swiper-slide><img src="./img/icon_img/css.png" alt="CSS"></swiper-slide>
+                        <swiper-slide><img src="./img/icon_img/java_script.png" alt="JS"></swiper-slide>
+                        <swiper-slide><img src="./img/icon_img/reacts.png" alt="React"></swiper-slide>
+                        <swiper-slide><img src="./img/icon_img/nodejs.png" alt="Node"></swiper-slide>
+                        <swiper-slide><img src="./img/icon_img/python.png" alt="Python"></swiper-slide>
+                    </swiper-container> 
+                </div>
+            </div>
+
+        </div> 
       </div>
-        <!-- socila Media  -->
-        <div class="Social-media">
-            <div class="icon-wrapper">
-              <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="icon-link">
-                <span>linkedin</span>
-                <img src="./img/socialmedia_img/linkedin.png" alt="linkedin-Img">
-              </a>
-              <hr>
+                                            <!-- projects -->
+<div id="projects">
+    <div class="project-header">
+        <h2 class="glitch-title" data-text="Deployed_Systems">Deployed_Systems</h2>
+        <p class="subtitle">// Accessing project database...</p>
+    </div>
+
+    <div class="project-grid">
+        <div class="tech-card">
+            <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">📁</span>
+                    <span class="file-name">Portfolio_Builder.exe</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>Portfolio Builder</h3>
+                    <p>Allows users to generate professional portfolios instantly via UI interaction without writing a single line of code.</p>
+                </div>
+                <div class="tech-tags">
+                    <span>UI/UX</span><span>javaScript</span><span>HTML&CSS</span>
+                </div>
+                <div class="card-actions">
+                    <a href="https://molaybera.github.io/Portfolio-Builder/" target="_blank" class="cyber-btn">Launch ></a>
+                </div>
             </div>
-            <div class="icon-wrapper">
-              <a href="https://www.facebook.com/molay.bera.161" target="_blank" class="icon-link">
-                <span>Facebook</span>
-                <img src="./img/socialmedia_img/facebook.png" alt="Facebook-Img">
-              </a>
-              <hr>
+        </div>
+
+        <div class="tech-card">
+             <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">📧</span>
+                    <span class="file-name">Auto_Mailer.sys</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>Automatic Email System</h3>
+                    <p>High-efficiency mailing system designed to broadcast customized emails to multiple targets.</p>
+                </div>
+                <div class="tech-tags">
+                    <span>Node.js</span><span>Express.js</span>
+                </div>
+                <div class="card-actions">
+                    <a href="https://molaybera.github.io/" target="_blank" class="cyber-btn">Explore ></a>
+                </div>
             </div>
-            <div class="icon-wrapper">
-              <a href="https://www.instagram.com/molay_bera1" target="_blank" class="icon-link">
-                <span>Instagram</span>
-                <img src="./img/socialmedia_img/instagram.png" alt="Instagram-Img">
-              </a>
-              <hr>
+        </div>
+
+        <div class="tech-card">
+             <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">☁️</span>
+                    <span class="file-name">Weather_app.api</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>Weather Report App</h3>
+                    <p>Real-time data visualization using external APIs to fetch live climate reports.</p>
+                </div>
+                <div class="tech-tags">
+                    <span>API</span><span>Async/Await</span>
+                </div>
+                <div class="card-actions">
+                    <a href="https://molaybera.github.io/Weather-report/" target="_blank" class="cyber-btn">Launch ></a>
+                </div>
             </div>
-            <div class="icon-wrapper">
-              <a href="https://github.com/Molaybera" target="_blank" class="icon-link">
-                <span>Github</span>
-                <img src="./img/socialmedia_img/github.png" alt="Github-Img">
-              </a>
-              <hr>
+        </div>
+
+        <div class="tech-card hidden-project">
+             <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">🔳</span>
+                    <span class="file-name"> QR_generator.mod</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>QR Code Generator</h3>
+                    <p>Lightweight tool to convert text strings and URLs into scannable QR matrix codes.</p>
+                </div>
+                <div class="tech-tags"><span>API</span><span>Tool</span></div>
+                <div class="card-actions"><a href="https://molaybera.github.io/Qr-Code-Generator/" target="_blank" class="cyber-btn">Launch ></a></div>
             </div>
-          </div>
+        </div>
+
+        <div class="tech-card hidden-project">
+             <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">🧮</span>
+                    <span class="file-name">Bunk_Calculate.exe</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>Bunk Calculator</h3>
+                    <p>Strategic attendance management tool for students to calculate safe bunking limits.</p>
+                </div>
+                <div class="tech-tags"><span>Logic</span><span>Math</span></div>
+                <div class="card-actions"><a href="https://molaybera.github.io/Bunk-Counter/" target="_blank" class="cyber-btn">Launch ></a></div>
+            </div>
+        </div>
+
+        <div class="tech-card hidden-project">
+             <div class="card-border-top"></div>
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="file-icon">📝</span>
+                    <span class="file-name">Task_Manager.log</span>
+                    <span class="status-dot"></span>
+                </div>
+                <div class="card-body">
+                    <h3>To-Do-List</h3>
+                    <p>Browser-based task management system to track daily operations and productivity.</p>
+                </div>
+                <div class="tech-tags"><span>JS</span><span>LocalStore</span></div>
+                <div class="card-actions"><a href="https://molaybera.github.io/To-Do-List/" target="_blank" class="cyber-btn">Launch ></a></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="load-more-container">
+        <button id="load-more-btn" class="cyber-btn wide-btn">
+            [ LOAD_ADDITIONAL_DATA ]
+        </button>
+    </div>
+</div>
+
+                                            <!-- Contact -->
+<div id="contact">
+    
+    <div class="comm-interface">
+        
+        <div class="comm-header">
+            <h2 class="comm-title">Initialize_Connection</h2>
+            <div class="signal-bars">
+                <div class="bar" style="--h: 40%"></div>
+                <div class="bar" style="--h: 70%"></div>
+                <div class="bar" style="--h: 100%"></div>
+                <div class="bar" style="--h: 60%"></div>
+                <div class="bar" style="--h: 80%"></div>
+            </div>
+        </div>
+
+        <div class="comm-body">
+            
+            <div class="direct-uplink">
+                <h3>&lt; Direct_Transmission /&gt;</h3>
+                <p class="status-text">Channel Open. Ready for payload.</p>
+                
+                <div class="email-terminal">
+                    <span class="prompt">user@host:~$</span>
+                    <span class="typing-text">send_mail --to=malaybera</span>
+                </div>
+
+                <div class="action-buttons">
+                    <a id="EmailLink" class="cmd-btn primary" target="_blank">
+                        <i class="fas fa-paper-plane"></i> EXECUTE_SEND
+                    </a>
+                    <button id="copyEmailBtn" class="cmd-btn secondary">
+                        <i class="fas fa-copy"></i> COPY_ADDRESS
+                    </button>
+                </div>
+            </div>
+
+            <div class="network-nodes">
+                <h3>&lt; Network_Nodes /&gt;</h3>
+                
+                <div class="node-grid">
+                    <a href="https://www.linkedin.com/in/molay-bera299" target="_blank" class="node-card">
+                        <div class="node-icon"><img src="./img/socialmedia_img/linkedin.png" alt="LI"></div>
+                        <div class="node-info">
+                            <span class="node-name">LinkedIn_Server</span>
+                            <span class="node-status">Connect</span>
+                        </div>
+                        <div class="node-arrow">></div>
+                    </a>
+
+                    <a href="https://github.com/Molaybera" target="_blank" class="node-card">
+                        <div class="node-icon"><img src="./img/socialmedia_img/github.png" alt="GH"></div>
+                        <div class="node-info">
+                            <span class="node-name">GitHub_Repo</span>
+                            <span class="node-status">Active</span>
+                        </div>
+                        <div class="node-arrow">></div>
+                    </a>
+
+                    <a href="https://www.facebook.com/molay.bera.161" target="_blank" class="node-card">
+                        <div class="node-icon"><img src="./img/socialmedia_img/facebook.png" alt="FB"></div>
+                        <div class="node-info">
+                            <span class="node-name">Facebook_Node</span>
+                            <span class="node-status">Linked</span>
+                        </div>
+                        <div class="node-arrow">></div>
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="node-card">
+                        <div class="node-icon"><img src="./img/socialmedia_img/instagram.png" alt="IG"></div>
+                        <div class="node-info">
+                            <span class="node-name">Insta_Feed</span>
+                            <span class="node-status">Temporary Offline</span>
+                        </div>
+                        <div class="node-arrow">></div>
+                    </a>
+                </div>
+            </div>
+
+        </div> <div class="comm-footer">
+            <p>System Status: Online | Location: Earth</p>
+        </div>
+
+    </div>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assects/javascript/particles.js" defer></script>
     <script src="./assects/javascript/script.js" defer></script>
+    <script src="./assects/javascript/nav.js" defer></script>
+    <script src="./assects/javascript/projects.js" defer></script>
     <script src="./assects/javascript/customRightClick.js" defer></script>
 </body>
 </html>
