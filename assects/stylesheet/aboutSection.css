@@ -16,7 +16,6 @@
     width: 100%;
 }
 
-/* 1. TOP ROW: BIO TERMINAL */
 .bio-row {
     display: flex;
     justify-content: center;
@@ -25,7 +24,7 @@
 
 .bio-terminal {
     width: 100%;
-    max-width: 800px; /* Limits width so it doesn't look stretched */
+    max-width: 800px;
     background: #1e1e1e;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 166, 255, 0.15);
@@ -64,24 +63,45 @@
 
 .terminal-btn {
     display: inline-block;
+    border: 2px solid var(--blue);
+    padding: 8px 15px;
+    border-radius: 5px;
     color: var(--blue);
     text-decoration: none;
     font-weight: bold;
     font-family: monospace;
+    background: rgba(0, 0, 0, 0.3);
     transition: 0.3s;
 }
-.terminal-btn:hover { text-shadow: 0 0 10px var(--blue); }
+.terminal-btn:hover {
+    text-shadow: 0 0 5px var(--blue);
+    box-shadow: 0 0 10px var(--blue);
+}
+.terminal-btn-arrow {
+    display: inline-block;
+    animation: moveArrow 1s ease-in-out infinite;
+}
 
-/* 2. SPLIT ROW: SKILLS (Left) & VISUALS (Right) */
+@keyframes moveArrow {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+}
+
 .split-row {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* 50% - 50% Split */
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
     width: 100%;
     align-items: center;
 }
 
-/* Left Column: Skills */
 .tech-panel {
     background: rgba(255, 255, 255, 0.03);
     padding: 25px;
@@ -89,8 +109,26 @@
     border: 1px solid #333;
 }
 
-.panel-title { color: var(--blue); font-family: "Rubik Scribble", system-ui; margin-bottom: 20px; text-align: center; }
-.sub-title { color: #888; font-family: monospace; margin: 15px 0 10px 0; border-bottom: 1px solid #444; display: inline-block; }
+.panel-title {
+    color: var(--blue);
+    font-family: "Rubik Scribble", system-ui;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.sub-title-tech {
+    color: var(--blue);
+    font-family: monospace;
+    margin: 15px 0 10px 0;
+    border-bottom: 1px solid var(--blue);
+    display: inline-block; 
+}
+.sub-title-soft {
+    color: #a855f7;
+    font-family: monospace;
+    margin: 15px 0 10px 0;
+    border-bottom: 1px solid #a855f7;
+    display: inline-block;
+}
 
 .skill-tags {
     display: flex;
@@ -112,14 +150,20 @@
 .tag:hover {
     background: var(--blue);
     color: black;
+    cursor: pointer;
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 166, 255, 0.3);
 }
 
-.tag.soft { border-color: #a855f7; }
-.tag.soft:hover { background: #a855f7; box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3); }
+.tag.soft {
+    border-color: #a855f7;
+}
+.tag.soft:hover {
+    background: #a855f7;
+    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.3);
+    cursor: pointer;
+}
 
-/* Right Column: Visual Scanner */
 .visual-scanner {
     position: relative;
     width: 100%;
@@ -136,12 +180,11 @@
     height: 2px;
     background: var(--blue);
     top: 0;
-    animation: scanner 3s linear infinite;
     z-index: 5;
     opacity: 0.5;
     box-shadow: 0 0 15px var(--blue);
+    animation: scanner 3s linear infinite;
 }
-
 @keyframes scanner { 0% { top: 0; } 50% { top: 100%; } 100% { top: 0; } }
 
 /* Fix Swiper Size */

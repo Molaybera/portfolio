@@ -100,6 +100,7 @@ body {
     box-shadow: 0 0 10px var(--green);
     animation: pulse 2s infinite;
 }
+.status-text-detail { color: var(--blue); }
 .user-highlight {
     color: var(--green);
     font-weight: 600;

@@ -154,8 +154,20 @@
     border: 3px solid rgba(0, 166, 255, 0.5);
     box-shadow: 0 0 30px rgba(0, 166, 255, 0.2);
     background: #000;
-}
+    animation: wave 5s ease-in-out infinite;
 
+}
+@keyframes wave {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-10px);
+    }
+    75% {
+        transform: translateY(10px);
+    }
+}
 .ProfileImg {
     position: absolute;
     top: 50%;

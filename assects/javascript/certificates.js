@@ -106,10 +106,11 @@ document.addEventListener('DOMContentLoaded', () => {
 <span class="log-hex">0x0050: B4 8E 7C 54 8E 00 00 00 8E 00 00 00 0C 00</span>
 <span class="log-warn">[WARN]</span> Encrypted packet detected. Decrypting...
 <br>
-[....................] 0%          .--.
-[#####...............] 25%        |o_o |
-[##########..........] 50%      (|     | )
-[###############.....] 75%      |__)==(__/
+[....................] 0%      .--.
+[#####...............] 25%    |o_o |
+[##########..........] 50%  ( |    | )
+[###############.....] 75%  |:      :|
+[####################] 100%  |_)==(_/
 <br>
 <span class="log-success">[SUCCESS]</span> Key found: RSA-4096
 <span class="log-info">[INFO]</span> Rendering Image Blob: "${certTitle}"...
