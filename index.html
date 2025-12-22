@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     <link rel="icon" href="./img/my-logo.png" type="image/x-icon">
 </head>
 <body>
@@ -374,16 +376,25 @@
         <div class="comm-body">
             
             <div class="direct-uplink">
+                <!-- THE LOADING OVERLAY (This appears on click) -->
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loader-title">ESTABLISHING UPLINK...</div>
+                    <div class="progress-container">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="log-output" id="logOutput">Initializing protocols...</div>
+                </div>
+
                 <h3>&lt; Direct_Transmission /&gt;</h3>
                 <p class="status-text">Channel Open. Ready for payload.</p>
                 
                 <div class="email-terminal">
-                    <span class="prompt">user@host:~$</span>
-                    <span class="typing-text">send_mail --to=malaybera</span>
+                    <span class="prompt">user@sender:~$</span>
+                    <span class="typing-text">send_mail --to=<div>'malaybera'</div></span>
                 </div>
 
                 <div class="action-buttons">
-                    <a id="EmailLink" class="cmd-btn primary" target="_blank">
+                    <a id="EmailLink" class="cmd-btn primary">
                         <i class="fas fa-paper-plane"></i> EXECUTE_SEND
                     </a>
                     <button id="copyEmailBtn" class="cmd-btn secondary">
@@ -426,15 +437,17 @@
                     <a href="https://www.instagram.com/" target="_blank" class="node-card">
                         <div class="node-icon"><img src="./img/socialmedia_img/instagram.png" alt="IG"></div>
                         <div class="node-info">
-                            <span class="node-name">Insta_Feed</span>
-                            <span class="node-status">Temporary Offline</span>
+                            <span class="node-name">Instagram_Feed</span>
+                            <span class="node-status" style="color: red;">Temporary Offline</span>
                         </div>
                         <div class="node-arrow">></div>
                     </a>
                 </div>
             </div>
 
-        </div> <div class="comm-footer">
+        </div> 
+        
+        <div class="comm-footer">
             <p>System Status: <span>Online</span> | Location: Earth</p>
         </div>
 
@@ -448,9 +461,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./assects/javascript/particles.js" defer></script>
-    <script src="./assects/javascript/script.js" defer></script>
     <script src="./assects/javascript/nav.js" defer></script>
+    <script src="./assects/javascript/main.js" defer></script>
     <script src="./assects/javascript/projects.js" defer></script>
+    <script src="./assects/javascript/contact.js" defer></script>
     <script src="./assects/javascript/customRightClick.js" defer></script>
 </body>
 </html>
