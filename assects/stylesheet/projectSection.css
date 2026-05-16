@@ -211,7 +211,7 @@
 
 /* Button Container */
 .load-more-container {
-    margin-top: 40px;
+    margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -230,6 +230,126 @@
     cursor: not-allowed;
     border-color: #555;
     color: #555;
+}
+
+/* arrow */
+.container {
+  height: 120px;
+  width: 120px;
+  position: relative;
+}
+.circle {
+  background-color:var(--black);
+  height: 120px;
+  width: 120px;
+  display: block;
+  border: 5px solid var(--blue);
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  animation-name:circle;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  animation-play-state:running;
+  -webkit-animation-name:circle;
+  -webkit-animation-duration:1s;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+}
+.fa {
+  font-size: 42px;
+  color: var(--blue);
+  bottom: 27px;
+  position: absolute;
+  left: 50%;
+  margin-left: -18px;
+  animation-name:arrow;
+  animation-duration:1s;
+  animation-timing-function:linear;
+  animation-delay:0s;
+  animation-iteration-count:infinite;
+  animation-direction:normal;
+  animation-play-state:running;
+  -webkit-animation-name:arrow;
+  -webkit-animation-duration:1s;
+  -webkit-animation-timing-function:linear;
+  -webkit-animation-delay:0s;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:normal;
+  -webkit-animation-play-state:running;
+}
+.pulse {
+  margin: 0 auto;
+  border-radius: 100px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 0;
+  background-color: transparent;
+  opacity: 0;
+  width: 110px;
+  height: 110px;
+  border: 10px solid var(--blue);
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -o-border-radius: 100px;
+  -ms-border-radius: 100px;
+  border-radius: 100px;
+  /* Giving Animation Function */
+  -webkit-animation: pulse 1s linear infinite 0.3s;
+  -moz-animation: pulse 1s linear infinite 0.3s; 
+  border-image: initial;
+}
+@keyframes arrow
+  {
+  0%   {bottom:0;}
+  75% {bottom:90px;}
+  100% {bottom:0;}
+  }
+@-webkit-keyframes arrow
+  {
+  0%   {bottom:0;}
+  75% {bottom:90px;}
+  100% {bottom:0;}
+  }
+@keyframes circle
+  {
+  0%   {height:120px;}
+  10% {height: 120px;}
+  50% {height: 130px;}
+  75% {height: 150px;}
+  90% {height: 130px;}
+  100% {height: 120px;}
+  }
+@-webkit-keyframes circle
+  {
+  0%   {height:120px;}
+  10% {height: 120px;}
+  50% {height: 130px;}
+  75% {height: 150px;}
+  90% {height: 130px;}
+  100% {height: 120px;}
+  }
+@-webkit-keyframes pulse {       
+  0% {-webkit-transform: scale(0); opacity: 0;}
+  8% {-webkit-transform: scale(0); opacity: 0;}
+  15% {-webkit-transform: scale(0.1); opacity: 1;}
+  30% {-webkit-transform: scale(0.5); opacity: 1;}
+  100% {opacity: 0; -webkit-transform: scale(1.5);}
+}
+@-moz-keyframes pulse {       
+  0% {-webkit-transform: scale(0); opacity: 0;}
+  8% {-webkit-transform: scale(0); opacity: 0;}
+  15% {-webkit-transform: scale(0.1); opacity: 1;}
+  30% {-webkit-transform: scale(0.5); opacity: 1;}
+  100% {opacity: 0; -webkit-transform: scale(1.5);}
 }
 
 @media screen and (max-width: 768px) {
