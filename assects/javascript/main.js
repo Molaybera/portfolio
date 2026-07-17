@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     // --- 2. RESTORED TEXT TYPING ANIMATION ---
     const textElement = document.getElementById('main-text');
-    const texts = ["Not an Error", "Learner", "Editor", "Programmer", "Web Developer", "May be an AI!"];
+    const texts = ["Not an Error","May be an AI!", "Learner", "Programmer", "Editor", "Web Developer"];
     let currentTextIndex = 0;
     let currentCharIndex = 0;
 
