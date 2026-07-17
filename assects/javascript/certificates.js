@@ -102,19 +102,19 @@ document.addEventListener('DOMContentLoaded', () => {
             const cursor = scriptContainer.querySelector('.cursor');
             const systemLogs = `
                 <span class="prompt-arrow">&gt;</span> ./view_cert.sh --target="${hexID}"
-                <span class="log-info">[INFO]</span> Connecting to secure server @ 192.168.0.X...
-                <span class="log-hex">0x0050: B4 8E 7C 54 8E 00 00 00 8E 00 00 00 0C 00</span>
-                <span class="log-warn">[WARN]</span> Encrypted packet detected. Decrypting...
-                <br>
-                [...................] 0%      .--.
-                [#####..............] 25%   <|o_o |>
-                [##########.........] 50%  }=|:++:|={
-                [###############....] 75%   .|:__:|.
-                [###################] 100%  |_)==(_|
-                <br>
-                <span class="log-success">[SUCCESS]</span> Key found: RSA-4096
-                <span class="log-info">[INFO]</span> Rendering Image Blob: "${certTitle}"...
-                <span class="log-success">[DONE]</span> Opening Viewer...
+<span class="log-info">[INFO]</span> Connecting to secure server @ 192.168.0.X...
+<span class="log-hex">0x0050: B4 8E 7C 54 8E 00 00 00 8E 00 00 00 0C 00</span>
+<span class="log-warn">[WARN]</span> Encrypted packet detected. Decrypting...
+<br>
+[...................] 0%      .--.
+[#####..............] 25%   <|o_o |>
+[##########.........] 50%  }=|:++:|={
+[###############....] 75%   .|:__:|.
+[###################] 100%  |_)==(_|
+<br>
+<span class="log-success">[SUCCESS]</span> Key found: RSA-4096
+<span class="log-info">[INFO]</span> Rendering Image Blob: "${certTitle}"...
+<span class="log-success">[DONE]</span> Opening Viewer...
             `;
 
             // Convert HTML string to DOM nodes in memory
